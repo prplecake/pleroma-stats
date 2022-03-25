@@ -6,7 +6,7 @@ Python script that gets *realtime* stats data from
 ## Dependencies
 
 - Python 3
-- Grafana
+- Grafana (for visualizations)
 - PostgreSQL server
 
 Install python deps:
@@ -28,19 +28,18 @@ sudo python -m pip install psycopg2
     ```
 
 3. `python pleroma-stats.py`
-4. Use your favourite scheduling method to set `pleroma-stats.py` to run
+4. Use your favorite scheduling method to set `pleroma-stats.py` to run
    regularly.
-5. Add the datasource PostgreSQL to your Grafana, configuring Host
+5. Add the data source PostgreSQL to your Grafana, configuring Host
    (usually `localhost:5432`), Database (in the example is
    `pleroma_stats`) and User fields.
 
-Then you could graph your Pleroma server stats with Grafana's PostgreSQL datasource!
-It gets all needed data from Pleroma's Postgresql database and then store stats to a new Postgresql database created above, to feed Grafana with their values.
+Then you could graph your Pleroma server stats with Grafana's PostgreSQL
+data source! It gets all needed data from Pleroma's PostgreSQL database
+and then store stats to a new PostgreSQL database created above, to feed
+Grafana with their values.
 
 ## Grafana Dashboard
 
 There's a JSON model of a Grafana dashboard in the `contrib/` directory.
 (Feel free to improve it and send a patch!)
-
-![](https://drop.jrgnsn.net/UCX5.png)
-![](https://drop.jrgnsn.net/tYk5.png)
